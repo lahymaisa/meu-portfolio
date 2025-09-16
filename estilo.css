@@ -1,6 +1,166 @@
-/* css externo */
+/* CSS Externo */
+
+/* Definir as cores Tema Dark */
+/* raiz */
+:root,
+:root[data-theme='dark'] {
+    --cor-fundo: #770077;
+    --cor-texto: #ff81ca;
+    --menu-link: #000000;
+
+    --cor-borda: #e9e9e9;
+    
+}
+/* Fundo Branco */
+:root[data-theme='light'] {
+    --cor-fundo: #777676;
+    --cor-texto: #525252;
+    --menu-link: #1b1b1b;
+
+    --cor-borda: #1b1b1b;
+ 
+}
+
+
 
 body {
-    background:rgba(0, 0, 0, 0.055) ; /* cor fundo */
-    color: rgba(166, 143, 188, 0.87); /* cor textos */
-} 
+    background: var(--cor-fundo); /* cor fundo */
+    color: var(--cor-texto); /* cor TEXTOS */
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+a {
+   color: var(--menu-link);
+   text-decoration: none;
+}
+
+ul {
+    list-style: none;  /* Estilo de Lista */
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    background: var(--cor-fundo);
+    border-bottom: 5px solid var(--cor-borda);
+}
+
+.menu-desktop {
+    background: var(--cor-fundo);
+    display: none;
+    /* esconde o menu desktop */
+
+}
+
+/* NAV = UL // OL */
+.menu  {
+    display: flex; /* em linha // horizontal */
+    gap: 1rem; /* 16px */
+    align-items: center;
+}
+
+/* LI = listas */
+.menu-item { 
+    width: 100%;
+}
+
+.menu-link {
+    display: flex;
+    align-items: center;
+}
+
+.menu-text {
+    color: var(--menu-link);
+    font-size: 1.2rem;
+    text-transform: uppercase;
+}
+
+/*--- Menu Hamburger
+botao menu mobile  ----- */
+
+#menuHamburger {
+    margin-left: 1rem;
+}
+
+.btn-menu-mobile {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    color: var(--cor-texto);
+    display: flex;
+    font-size: 1.8rem;
+    align-items: center;
+    justify-content: center;
+    padding: 0.5rem;
+}	
+
+.menu-mobile {  /* NAV */
+    position: fixed;
+    top: 0;
+    right: 0;
+    background: var(--cor-fundo);
+    width: 75%;
+    height: 100vh; /* viewPort Altura */
+    border-left: 1px solid var(--cor-borda);
+    max-width: 320px;
+    display: flex;
+    flex-direction: column;
+    padding-top: 4rem;
+    transition: .3s ease-in-out; /* voltar aqui */
+    transform: translateX(100%);
+}
+
+/* Ativar o Menu Mobile */
+.menu-mobile.active {
+    transform: translateX(0%);
+}
+
+.menu-mobile /* nav */
+.menu-list  /* UL */ {  
+    display: flex;
+    flex-direction: column; /* EIXO Y = Vertical */
+    gap: 1rem;
+    width: 100%;
+    padding: 1rem 1rem 2rem;
+}
+
+.menu-mobile .menu-item  {
+    width: 100%;
+    text-align: center;
+}
+
+.menu-mobile .menu-link {
+    padding: 0.5rem 0;
+    display: inline-block;
+    font-size: 1rem;
+}
+
+.logo{
+    width: ; /* comprimento */
+    height: ; /* altura */
+}
+
+.header-toggle {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+
+
+/* Medidas Responsivas */
+@media (min-width: 768px) {
+
+    .menu-desktop {
+        display: flex;
+        min-width: 30%; /* alinhar o logo */
+    }
+    .btn-menu-mobile {
+        display: none;
+    }
+    .header-toggle {
+        min-width: 30%; /* alinhar o logo */
+    }
+}
