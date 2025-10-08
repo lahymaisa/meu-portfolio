@@ -14,7 +14,7 @@
 
 /* Fundo Branco */
 :root[data-theme='light'] {
-    --cor-fundo: rosybrown;
+    --cor-fundo: rgb(144, 172, 168);
     --cor-texto: #f0f0f0;
     --menu-link: #fffafa;
 
@@ -192,6 +192,7 @@ botao menu mobile  ----- */
     padding: 4.5rem 1rem;
     display: flex;
     flex-direction: column;
+    gap: 1.5rem;
 }
 
 
@@ -204,6 +205,50 @@ botao menu mobile  ----- */
 
 h1 {
     font-size: 2.5rem;
+}
+
+.video iframe {
+    aspect-ratio: 16/9;
+}
+
+#inicio,
+.servicos,
+.sobre,
+.contato {
+    padding: 2.5rem 1rem;
+}
+
+.descricao-video{
+    display: flex;
+    flex-direction: column;
+    background: #797979;
+    padding: 6.25rem 1rem 2rem;
+    align-items: center;
+    justify-content: flex-start;
+    margin-top: -5.5rem;
+
+}
+
+.descricao-video h2 {
+    font-size: 2rem;
+    text-transform: uppercase;
+    text-align: ;
+    margin-top: -2rem;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+     /*letter-spacing: ;  */
+}
+
+.servicos{
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+
+}
+
+.servicos.container{
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
 }
 
 
@@ -233,7 +278,9 @@ h1 {
         font-size: 5rem;
     }
 
-    #home {
+    #inicio, 
+    .servicos,
+    .sobre {
         padding: 8rem 6rem 4rem 6rem;
     }
 
@@ -242,10 +289,17 @@ h1 {
         flex-direction: column;
         align-items: flex-start;
     }
-} /* fim min 768px */
+}
 
-@media ( min-width: 1400px) {
+/* fim min 768px */
+
+@media (min-width: 1400px) {
     h1 {
         font-size: 6.5rem;
+    }
+    .descricao-video,
+    .servicos,
+    .sobre {
+        padding: 10rem 15rem 4rem;
     }
 }
